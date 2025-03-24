@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './ui/playfair.ui'
+# Form implementation generated from reading ui file './ui/vigenere.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -9,8 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = "../platforms"
 
 
 class Ui_MainWindow(object):
@@ -20,16 +18,16 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(60, 190, 61, 16))
+        self.label.setGeometry(QtCore.QRect(50, 80, 61, 16))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(70, 330, 47, 13))
+        self.label_2.setGeometry(QtCore.QRect(60, 220, 47, 13))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(50, 370, 61, 16))
+        self.label_3.setGeometry(QtCore.QRect(40, 260, 61, 16))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(180, -10, 361, 81))
+        self.label_4.setGeometry(QtCore.QRect(180, 10, 361, 81))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
@@ -37,29 +35,20 @@ class Ui_MainWindow(object):
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.btn_encrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_encrypt.setGeometry(QtCore.QRect(260, 510, 75, 23))
+        self.btn_encrypt.setGeometry(QtCore.QRect(160, 420, 75, 23))
         self.btn_encrypt.setObjectName("btn_encrypt")
         self.btn_decrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_decrypt.setGeometry(QtCore.QRect(430, 510, 75, 23))
+        self.btn_decrypt.setGeometry(QtCore.QRect(370, 420, 75, 23))
         self.btn_decrypt.setObjectName("btn_decrypt")
         self.txt_key = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt_key.setGeometry(QtCore.QRect(130, 330, 421, 20))
+        self.txt_key.setGeometry(QtCore.QRect(120, 220, 421, 20))
         self.txt_key.setObjectName("txt_key")
         self.txt_cipher_text = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_cipher_text.setGeometry(QtCore.QRect(130, 370, 421, 121))
+        self.txt_cipher_text.setGeometry(QtCore.QRect(120, 260, 421, 121))
         self.txt_cipher_text.setObjectName("txt_cipher_text")
         self.txt_plain_text = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_plain_text.setGeometry(QtCore.QRect(130, 190, 421, 121))
+        self.txt_plain_text.setGeometry(QtCore.QRect(120, 80, 421, 121))
         self.txt_plain_text.setObjectName("txt_plain_text")
-        self.txt_matrix = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_matrix.setGeometry(QtCore.QRect(130, 60, 421, 121))
-        self.txt_matrix.setObjectName("txt_matrix")
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(60, 70, 81, 16))
-        self.label_5.setObjectName("label_5")
-        self.btn_matrix = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_matrix.setGeometry(QtCore.QRect(90, 510, 75, 23))
-        self.btn_matrix.setObjectName("btn_matrix")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 725, 21))
@@ -78,11 +67,9 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Plain Text:"))
         self.label_2.setText(_translate("MainWindow", "Key:"))
         self.label_3.setText(_translate("MainWindow", "CipherText:"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p>PLAYFAIR CIPHER</p></body></html>"))
+        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p>VIGENERE CIPHER</p><p><br/></p></body></html>"))
         self.btn_encrypt.setText(_translate("MainWindow", "Encrypt"))
         self.btn_decrypt.setText(_translate("MainWindow", "Decrypt"))
-        self.label_5.setText(_translate("MainWindow", "Matrix:"))
-        self.btn_matrix.setText(_translate("MainWindow", "Create matrix"))
 
 
 if __name__ == "__main__":

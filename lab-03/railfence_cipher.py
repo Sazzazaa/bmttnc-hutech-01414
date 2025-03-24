@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QLineEdit, QPlainTextEdit, QWidget, QMessageBox
-from ui.caesar import Ui_MainWindow
+from ui.railfence import Ui_MainWindow
 import requests
 
 class MyApp(QMainWindow):
@@ -13,7 +13,7 @@ class MyApp(QMainWindow):
         
 
     def call_api_encrypt(self):
-        url = "http://127.0.0.1:5000/api/caesar/encrypt"
+        url = "http://127.0.0.1:5000/api/railfence/encrypt"
         payload = {
             "plain_text": self.ui.txt_plain_text.toPlainText(),
             "key": self.ui.txt_key.text()
@@ -22,7 +22,7 @@ class MyApp(QMainWindow):
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 data = response.json()
-                self.ui.txt_cipher_text.setPlainText(data["encrypted_message"])
+                self.ui.txt_cipher_text.setPlainText(data["encrypted_text"])
                 
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
@@ -33,7 +33,7 @@ class MyApp(QMainWindow):
         except requests.exceptions.RequestException as e:
             print("Error: %s" % e.message)
     def call_api_decrypt(self):
-        url = "http://127.0.0.1:5000/api/caesar/decrypt"
+        url = "http://127.0.0.1:5000/api/railfence/decrypt"
         payload = {
             "cipher_text": self.ui.txt_cipher_text.toPlainText(),
             "key": self.ui.txt_key.text()
@@ -42,7 +42,7 @@ class MyApp(QMainWindow):
                 response = requests.post(url, json=payload)
                 if response.status_code == 200:
                     data = response.json()
-                    self.ui.txt_plain_text.setPlainText(data["decrypted_message"])
+                    self.ui.txt_plain_text.setPlainText(data["decrypted_text"])
                     
                     msg = QMessageBox()
                     msg.setIcon(QMessageBox.Information)
@@ -59,4 +59,3 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 
 
-#Khang
